@@ -41,9 +41,25 @@ function printM($array)
     for ($i = 0; $i < count($array); $i++) {
         $in = array_keys($array[$i])[0];
         $out = array_keys($array[$i])[1];
-        echo ("<p>" . $in . " - "  . $out . "  |  " .  $array[$i][$in] . " - " .  $array[$i][$out]);
+        echo ("<p>" . $in . " - "  . $out . "  |  " .  $array[$i][$in] . " - " .  $array[$i][$out] . "</p>");
     };
 };
+
+// snack 3
+$randomArray = [];
+while (count($randomArray) < 15) {
+    $randomNr = rand(0, 100);
+    if (!in_array($randomNr, $randomArray)) {
+        $randomArray[] = $randomNr;
+    };
+};
+
+function printRandomArray($array)
+{
+    for ($i = 0; $i < count($array); $i++) {
+        echo (" " . $array[$i]);
+    }
+}
 
 
 ?>
@@ -61,6 +77,10 @@ function printM($array)
 <body>
     <h1>Snack 1</h1>
     <?php printM($matches) ?>
+
+    <h2>Snack 3</h2>
+    <p>I 15 numeri casuali dell'array sono: <?php printRandomArray($randomArray) ?></p>
+
 
 </body>
 
